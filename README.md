@@ -2,8 +2,6 @@
 
 A GraphQL API server for [Wikiquote](https://en.wikiquote.org/wiki/Main_Page)
 
-[Now server](https://wikiquote-graphql-ypolufuvns.now.sh)
-
 ## Motivation
 
 I wanted to create a quote application and existing API sources are not satisfying.
