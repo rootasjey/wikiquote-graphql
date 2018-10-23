@@ -12,9 +12,33 @@ About Wikiquote REST API, it doesn't seem clean enough for a newbie, so I decide
 
 For now, the API provide very minimal feature as I've juste started. I'll add more features step by step. Feel free to help me :)
 
-### Available
+### API documentation
 
-* Quote of the day
+* [Get quote of the day](#get-quote-of-the-day)
+
+#### Get quote of the day
+
+```json
+// Request
+{
+  today {
+    author
+    date
+    value
+  }
+}
+
+// Response
+{
+  "data": {
+    "today": {
+      "author": "Michael Crichton  in  Travels",
+      "date": "Tuesday, October 23, 2018, 18:34 ",
+      "value": "The purpose of the I Ching or the tarot … "
+    }
+  }
+}
+```
 
 ### TODO
 
