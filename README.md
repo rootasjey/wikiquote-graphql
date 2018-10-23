@@ -14,13 +14,14 @@ For now, the API provide very minimal feature as I've juste started. I'll add mo
 
 ### API documentation
 
+In the following codes samples, the `request` variable is the data which must be sent over a `POST` request and the `response` is the data received from that same request.
+
 * [Get quote of the day](#get-quote-of-the-day)
 
 #### Get quote of the day
 
-```json
-// Request
-{
+```js
+const request = {
   today {
     author
     date
@@ -28,8 +29,7 @@ For now, the API provide very minimal feature as I've juste started. I'll add mo
   }
 }
 
-// Response
-{
+const response = {
   "data": {
     "today": {
       "author": "Michael Crichton  in  Travels",
