@@ -1,41 +1,18 @@
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+const todayResolvers = {
+  EN: require('./resolvers/today-EN'),
+  FR: require('./resolvers/today-FR')
+};
 
 module.exports = {
   // A map of functions which return data for the schema.
   Query: {
-    version: () => '0.1.0',
+    version: () => '0.2.0',
 
-    today: () => {
-      return JSDOM
-        .fromURL('https://en.wikiquote.org/wiki/Main_Page')
-        .then(dom => {
-          const body = dom.window.document.body;
+    languages: () => ['EN', 'FR'],
 
-
-          const author = body
-            .querySelector('#mf-qotd tbody tbody tbody tr:nth-child(2)')
-            .textContent
-            .replace(/[\n\r]/g, '')
-            .replace(/[~]/g, '')
-            .trim();
-
-          const dateElem = body
-            .querySelector('#mf-header .MainPageLetterHead tr td:nth-child(2)');
-
-          const date = dateElem.textContent.substring(0, dateElem.textContent.indexOf('(UTC)'));
-
-          const value = body
-            .querySelector('#mf-qotd tbody tbody tbody tr')
-            .textContent
-            .replace(/[\n\r]/g, '');
-
-          return {
-            author,
-            date,
-            value
-          };
-        });
+    today: (root, args) => {
+      const { language } = args;
+      return todayResolvers[language](language);
     }
   },
-}
+};

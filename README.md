@@ -29,6 +29,14 @@ const request = {
   }
 }
 
+// In a specific language
+const request = {
+  today(language: FR) {
+    author
+    ...
+  }
+}
+
 const response = {
   "data": {
     "today": {
@@ -54,6 +62,7 @@ Don't hesitate to contribute to this projet by openning an issue or sending PR (
 
 * [Wikiquote API page](https://en.wikiquote.org/w/api.php)
 * [Wikiquote main page](https://en.wikiquote.org/wiki/Main_Page)
+* [FR Wikiquote previous quotes](https://fr.wikiquote.org/wiki/Modèle:Citation_du_jour/20_juin_2018)
 
 ## Contact
 

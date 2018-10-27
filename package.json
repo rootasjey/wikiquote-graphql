@@ -1,6 +1,6 @@
 {
   "name": "wikiquote-graphql",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A GraphQL API server for Wikiquote",
   "main": "server.js",
   "author": "Jeremie CORPINOT",
@@ -12,9 +12,9 @@
   "dependencies": {
     "apollo-server": "2.1.0",
     "graphql": "14.0.2",
-    "jsdom": "12.1.0"
+    "jsdom": "12.2.0"
   },
   "devDependencies": {
-    "eslint": "5.6.1"
+    "eslint": "5.8.0"
   }
 }

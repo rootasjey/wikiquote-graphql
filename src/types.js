@@ -2,11 +2,14 @@ const { gql } = require('apollo-server');
 
 module.exports = gql`
   type Query {
-    "API version"
-    version: String,
+    "Available quotes languages"
+    languages: [Language]!,
 
     "Get the quote of today"
-    today: Quote
+    today(language: Language = EN): Quote,
+
+    "API version"
+    version: String,
   }
 
   "A quote"
@@ -20,5 +23,11 @@ module.exports = gql`
 
     "Quote's value"
     value: String
+  }
+
+  "API supported languages"
+  enum Language {
+    EN,
+    FR
   }
 `;
